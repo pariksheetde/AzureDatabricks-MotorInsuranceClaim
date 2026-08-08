@@ -5,7 +5,7 @@ import pyspark.sql.functions as F
 PIPELINE_NAME = spark.conf.get("pipeline_name")
 
 @dp.materialized_view(
-    name="MOTOR.GOLD.INJURY_DETAILS",
+    name="MOTOR.GOLD.HUMAN_INJURY_CASUALTIES",
     comment="Aggregated injury counts by borough, location, and zip",
     table_properties={"quality": "gold", 
                       'delta.enableDeletionVectors' : 'true', 
@@ -43,7 +43,7 @@ import pyspark.sql.functions as F
 PIPELINE_NAME = spark.conf.get("pipeline_name")
 
 @dp.materialized_view(
-    name="MOTOR.GOLD.KILLED_DETAILS",
+    name="MOTOR.GOLD.HUMAN_DEATH_CASUALTIES",
     comment="Aggregated killed counts by borough, location, and zip",
     table_properties={"quality": "gold", 
                       'delta.enableDeletionVectors' : 'true', 
