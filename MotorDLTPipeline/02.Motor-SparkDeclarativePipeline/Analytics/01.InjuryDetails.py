@@ -7,7 +7,10 @@ PIPELINE_NAME = spark.conf.get("pipeline_name")
 @dp.materialized_view(
     name="MOTOR.GOLD.INJURY_DETAILS",
     comment="Aggregated injury counts by borough, location, and zip",
-    table_properties={"quality": "gold"}
+    table_properties={"quality": "gold", 
+                      'delta.enableDeletionVectors' : 'true', 
+                      'delta.enableRowTracking' : 'true',
+                      'delta.enableChangeDataFeed' : 'true'}
 )
 def injury_details():
     # Read silver table
@@ -42,7 +45,10 @@ PIPELINE_NAME = spark.conf.get("pipeline_name")
 @dp.materialized_view(
     name="MOTOR.GOLD.KILLED_DETAILS",
     comment="Aggregated killed counts by borough, location, and zip",
-    table_properties={"quality": "gold"}
+    table_properties={"quality": "gold", 
+                      'delta.enableDeletionVectors' : 'true', 
+                      'delta.enableRowTracking' : 'true',
+                      'delta.enableChangeDataFeed' : 'true'}
 )
 def killed_details():
     # Read silver table
