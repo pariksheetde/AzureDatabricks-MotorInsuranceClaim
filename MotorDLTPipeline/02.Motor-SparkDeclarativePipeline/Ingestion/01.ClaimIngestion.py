@@ -1,4 +1,4 @@
-# Databricks Notebook source
+# LOAD FILES FROM ADLS INTO BRONZE LAYER
 from pyspark import pipelines as dp
 import pyspark.sql.functions as F
 from pyspark.sql.types import StructType, StructField, StringType
