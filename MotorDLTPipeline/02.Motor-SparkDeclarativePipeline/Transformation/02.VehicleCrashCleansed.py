@@ -1,4 +1,4 @@
-# Databricks Notebook source
+# LOAD BRONZE LAYER INTO SILVER LAYER
 from pyspark import pipelines as dp
 import pyspark.sql.functions as F
 from pyspark.sql.functions import lit, current_timestamp, to_timestamp, concat, col
